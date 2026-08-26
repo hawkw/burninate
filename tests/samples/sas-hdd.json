@@ -1,0 +1,215 @@
+{
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      5
+    ],
+    "pre_release": false,
+    "platform_info": "x86_64-linux-7.0.13",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-j",
+      "-x",
+      "/dev/disk/by-id/wwn-0x5000cca2a15d9a7c"
+    ],
+    "exit_status": 0
+  },
+  "local_time": {
+    "time_t": 1786293493,
+    "asctime": "Sun Aug  9 09:38:13 2026 PDT"
+  },
+  "device": {
+    "name": "/dev/disk/by-id/wwn-0x5000cca2a15d9a7c",
+    "info_name": "/dev/disk/by-id/wwn-0x5000cca2a15d9a7c",
+    "type": "scsi",
+    "protocol": "SCSI"
+  },
+  "scsi_vendor": "WDC",
+  "scsi_product": "WUH721816AL5204",
+  "model_name": "WDC WUH721816AL5204",
+  "scsi_model_name": "WDC WUH721816AL5204",
+  "scsi_revision": "C232",
+  "scsi_version": "SPC-5",
+  "user_capacity": {
+    "blocks": 31251759104,
+    "bytes": 16000900661248
+  },
+  "logical_block_size": 512,
+  "physical_block_size": 4096,
+  "scsi_lb_provisioning": {
+    "name": "fully provisioned",
+    "value": 0,
+    "management_enabled": {
+      "name": "LBPME",
+      "value": 0
+    },
+    "read_zeros": {
+      "name": "LBPRZ",
+      "value": 0
+    }
+  },
+  "rotation_rate": 7200,
+  "form_factor": {
+    "scsi_value": 2,
+    "name": "3.5 inches"
+  },
+  "logical_unit_id": "0x5000cca2a15d9a7c",
+  "serial_number": "2CHNGUYP",
+  "device_type": {
+    "scsi_terminology": "Peripheral Device Type [PDT]",
+    "scsi_value": 0,
+    "name": "disk"
+  },
+  "scsi_transport_protocol": {
+    "name": "SAS (SPL-4)",
+    "value": 6
+  },
+  "smart_support": {
+    "available": true,
+    "enabled": true
+  },
+  "temperature_warning": {
+    "enabled": true
+  },
+  "smart_status": {
+    "passed": true
+  },
+  "scsi_environmental_reports": {
+    "temperature_1": {
+      "parameter_code": 0,
+      "current": 30,
+      "lifetime_maximum": 33,
+      "lifetime_minimum": 23,
+      "maximum_since_power_on": 32,
+      "minimum_since_power_on": 28
+    }
+  },
+  "scsi_start_stop_cycle_counter": {
+    "year_of_manufacture": "2020",
+    "week_of_manufacture": "52",
+    "specified_cycle_count_over_device_lifetime": 50000,
+    "accumulated_start_stop_cycles": 17,
+    "specified_load_unload_count_over_device_lifetime": 600000,
+    "accumulated_load_unload_cycles": 75
+  },
+  "scsi_grown_defect_list": 0,
+  "seagate_farm_log": {
+    "supported": false
+  },
+  "scsi_error_counter_log": {
+    "read": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 2,
+      "gigabytes_processed": "0.237",
+      "total_uncorrected_errors": 0
+    },
+    "write": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 28,
+      "gigabytes_processed": "0.042",
+      "total_uncorrected_errors": 0
+    },
+    "verify": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 15,
+      "gigabytes_processed": "0.000",
+      "total_uncorrected_errors": 0
+    }
+  },
+  "scsi_background_scan": {
+    "status": {
+      "value": 8,
+      "string": "waiting until BMS interval timer expires",
+      "number_scans_performed": 2,
+      "scan_progress": "0.00%",
+      "number_medium_scans_performed": 2
+    }
+  },
+  "power_on_time": {
+    "hours": 1470,
+    "minutes": 46
+  },
+  "scsi_general_statistics_and_performance_log": {
+    "general_access": {
+      "number_of_read_commands": 2875,
+      "number_of_write_commands": 9787,
+      "number_of_logical_blocks_received": 82859,
+      "number_of_logical_blocks_transmitted": 462264,
+      "read_command_processing_intervals": 0,
+      "write_command_processing_intervals": 0,
+      "weighted_number_of_read_commands_plus_write_commands": 0,
+      "weighted_read_command_processing_plus_write_command_processing": 0
+    },
+    "idle_time": {
+      "idle_time_intervals": 105609972
+    },
+    "time_interval": {
+      "exponent": 2,
+      "integer": 5
+    }
+  },
+  "scsi_sas_port_0": {
+    "relative_target_port_id": 1,
+    "generation_code": 1,
+    "number_of_phys": 1,
+    "phy_0": {
+      "identifier": 0,
+      "attached_device_type": "expander device",
+      "attached_reason": "power on",
+      "reason": "unknown",
+      "negotiated_logical_link_rate": "phy enabled; 12 Gbps",
+      "attached_initiator_port": {
+        "ssp_stp_smp": "001"
+      },
+      "attached_target_port": {
+        "ssp_stp_smp": "001"
+      },
+      "sas_address": "0x5000cca2a15d9a7d",
+      "attached_sas_address": "0x50000d1701e1263f",
+      "attached_phy_identifier": 4,
+      "invalid_dword_count": 0,
+      "running_disparity_error_count": 0,
+      "loss_of_dword_synchronization_count": 0,
+      "phy_reset_problem_count": 0
+    }
+  },
+  "scsi_sas_port_1": {
+    "relative_target_port_id": 2,
+    "generation_code": 1,
+    "number_of_phys": 1,
+    "phy_0": {
+      "identifier": 1,
+      "attached_device_type": "no device attached",
+      "attached_reason": "unknown",
+      "reason": "power on",
+      "negotiated_logical_link_rate": "phy enabled; unknown",
+      "attached_initiator_port": {
+        "ssp_stp_smp": "000"
+      },
+      "attached_target_port": {
+        "ssp_stp_smp": "000"
+      },
+      "sas_address": "0x5000cca2a15d9a7e",
+      "attached_sas_address": "0x0",
+      "attached_phy_identifier": 0,
+      "invalid_dword_count": 0,
+      "running_disparity_error_count": 0,
+      "loss_of_dword_synchronization_count": 0,
+      "phy_reset_problem_count": 0
+    }
+  }
+}
