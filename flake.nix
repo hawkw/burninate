@@ -17,19 +17,29 @@
         # ...
       ];
       perSystem = { config, self', pkgs, ... }: {
-        packages.burninate = pkgs.writeShellApplication {
-          name = "burninate";
-          runtimeInputs = with pkgs; [
-            smartmontools # smartctl
-            e2fsprogs # badblocks
-            util-linux # lsblk, wipefs, blockdev
-            coreutils
-            gnugrep
-            jq # used to parse smartctl -j (JSON) output
-          ];
-          text = builtins.readFile ./burninate.sh;
+        packages = {
+          burninate = pkgs.writeShellApplication {
+            name = "burninate";
+            runtimeInputs = with pkgs; [
+              smartmontools # smartctl
+              e2fsprogs # badblocks
+              util-linux # lsblk, wipefs, blockdev
+              coreutils
+              gnugrep
+              jq # used to parse smartctl -j (JSON) output
+            ];
+            text = builtins.readFile ./burninate.sh;
+          };
+          default = self'.packages.burninate;
         };
-        packages.default = self'.packages.burninate;
+
+        apps = {
+          burninate = {
+            type = "app";
+            program = "${self'.packages.burninate}/bin/burninate";
+          };
+          default = self'.apps.burninate;
+        };
 
         checks = {
           # A basic check that the script passes shellcheck, the CLI runs, and
