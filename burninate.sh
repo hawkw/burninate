@@ -357,7 +357,7 @@ cmd_start() {
   fi
 
   # No holders: refuse if the disk or a partition is claimed by md/dm/
-  # LUKS/LVM. ZFS members have no holders, hence the separate pool gate
+  # LUKS/LVM. ZFS members have no holders, hence the separate pool check
   # below.
   local kname
   while IFS= read -r kname; do
@@ -461,7 +461,7 @@ cmd_start() {
     echo "  state dir: $state_root/$serial"
     echo
     echo "Would run:"
-    echo "  1. short SMART self-test (fail-fast gate)"
+    echo "  1. short SMART self-test (fail-fast)"
     if ((no_write)); then
       echo "  2. surface pass SKIPPED (--no-write)"
     else
@@ -476,7 +476,7 @@ cmd_start() {
   # the baseline health status check above, allowing us to rejects a DOA drive
   # before the surface pass. Runs before the confirmation prompt so a dead drive
   # never asks the operator to commit.
-  echo "Running short SMART self-test (fail-fast gate; ~1-2 min)..."
+  echo "Running short SMART self-test (fail-fast, will take ~1-2 min)..."
   smartctl -t short "$dev" >/dev/null || die "failed to start short self-test"
   local short_status short_state
   short_status=$(smart_await_selftest "$dev" short 1200) ||
@@ -499,7 +499,7 @@ cmd_start() {
   else
     echo
     echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-    echo "!!! This will DESTROY ALL DATA on $dev.                            !!!"
+    echo "!!! This will DESTROY ALL DATA ON THE DISK                         !!!"
     echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
     echo
     echo "warning: The write and verify burn-in pass may take over a day to"
